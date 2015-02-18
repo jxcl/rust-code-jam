@@ -8,7 +8,8 @@ struct Problem {
     items: Vec<u32>,
 }
 
-fn solve_problem(problem: Problem) -> (u32, u32) {
+/// Find two items in Problem whose prices sum to the credit available
+fn solve_problem(problem: &Problem) -> (u32, u32) {
     for x in 0..problem.num_items {
         let item_cost = problem.items[x as usize];
         if item_cost > problem.credit {
@@ -79,7 +80,7 @@ fn main() {
 
     for i in 0..n {
         let problem = read_problem();
-        let (x, y) = solve_problem(problem);
+        let (x, y) = solve_problem(&problem);
 
         println!("Case #{}: {} {}", i + 1, x + 1, y + 1);
     }
