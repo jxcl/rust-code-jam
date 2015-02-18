@@ -38,6 +38,8 @@ fn map_char(c: char) -> String {
 }
 
 fn replace_pipes(input: String) -> String {
+    // Replace pipes with spaces where necessary and remove
+    // the rest.
     let mut input_bytes = input.as_bytes().to_vec();
 
     for i in 0..input_bytes.len() {
